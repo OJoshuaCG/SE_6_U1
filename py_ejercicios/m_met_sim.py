@@ -1,3 +1,11 @@
+'''
+Instancia
+Preferencias de usuario
+usuario -> vector de caracteristicas
+Aplicar las metricas
+'''
+
+
 def Manhattan(A, B):
     d = sum([
         abs(A[i]-B[i])

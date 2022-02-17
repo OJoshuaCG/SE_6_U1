@@ -1,0 +1,2 @@
+Ver como trabajar con pulsadores
+Armar una estructura fisica para el control

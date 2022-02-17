@@ -37,8 +37,8 @@ void loop() {
             Serial.println("Desea jugar de nuevo? 1=SI, 0=NO");
             edo++;
         break;
-
     }
+    delay(200);
 }
 
 void play(){
@@ -83,7 +83,6 @@ void checkInput(){
             else
                 edo++;
             goto end;
-
         }
 
         u = u-1;

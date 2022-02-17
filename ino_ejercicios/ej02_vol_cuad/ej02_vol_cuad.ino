@@ -2,7 +2,7 @@
 
 void setup() {
     Serial.begin(9600);
-    Serial.timeout(10);
+//    Serial.timeout(10);
 }
 
 int x, y, h, v, res;
@@ -11,28 +11,28 @@ int edo = 0;
 void loop() {
     switch(edo){
         case 0: case 3: case 6:        
-            if(estado == 0)
+            if(edo == 0)
                 msg = "A";
-            else if(estado == 3)
+            else if(edo == 3)
                 msg = "B";
-            else(estado == 6)
+            else if(edo == 6)
                 msg = "H";
             
             Serial.println("Ingrese lado " + msg + ": ");
             edo++;
         break;
-        case 1: case 4: case 7: case 11:           
+        case 1: case 4: case 7: case 11:             
             if(Serial.available()>0){
                 valor = Serial.readString();
                 edo++;
-            }
+            }            
         break;
-        case 2: case 5: case 8: case 12:
-            if(!valor.equals("")){
-                v = valor.toInt();
-                Serial.println(v);
-                if(v == 0)                  
-                    goto back;
+        case 2: case 5: case 8: case 12:            
+            Serial.println(valor);
+            if(!valor.equals("")){                
+                v = valor.toInt();                    
+                if(v == 0)
+                    goto back;               
 
                 if(edo == 2)
                     x = v;
@@ -40,18 +40,18 @@ void loop() {
                     y = v;
                 else if(edo == 8)
                     h = v;
-                else
+                else{
                     if(v == 1)
                         edo = 0;
                     else
                         edo++;
                     break;
-
+                }                
                 edo++;
             }
             else{
                 back:
-                Serial.println("Dato invalido");
+                Serial.println("Dato invalido ("+valor+")");
                 edo -= 2;
             }
         break;
@@ -61,8 +61,9 @@ void loop() {
             edo++;
         break;
         case 10:
-            Serial.println("Deseas realizarlo de nuevo? 1 = Si | 0 = No");
+            Serial.println("Deseas realizarlo de nuevo? 1 = Si | 2 = No");
             edo++;
         break;
     }
+    delay(200);
 }

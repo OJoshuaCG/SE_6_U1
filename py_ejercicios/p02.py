@@ -14,3 +14,8 @@ for i in vectores:
     for j in i:
         print('{}, '.format(j), end="")
     print()
+
+'''
+3er programa
+Aplicar la FO a todos, seleccionar al mejor y enviarlo al arduino
+'''
