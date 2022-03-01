@@ -1,0 +1,37 @@
+int leds [5] = {2, 3, 4, 5, 6};
+int botones [5] = {7, 8, 9, 10, 11};
+
+void setup() {
+    for(int i = 0; i < 5; i++){
+        pinMode(botones[i], INPUT_PULLUP);
+        pinMode(leds[i], OUTPUT);
+    }
+    Serial.begin(9600);
+}
+
+int edosBtns [5]= {0, 0, 0, 0, 0};
+
+void loop() {
+    String cadena = "";
+    char led= 'a';
+    for(int i = 0; i < 5; i++){
+        edosBtns[i] = digitalRead(botones[i]);
+        cadena += ("Boton " + String(i+1) + ": " + String(edosBtns[i]) + "\n");
+        
+        digitalWrite(leds[i], !edosBtns[i]);
+    }
+    
+    cadena += "\n";
+
+    
+    Serial.println(cadena);
+
+    delay(250);
+}
+
+void limpiarPrender(int led){
+    for(int i = 0; i < 5; i++){
+        digitalWrite(leds[i], 0);
+    }
+    digitalWrite(leds[led], 1);
+}

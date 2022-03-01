@@ -7,7 +7,7 @@
 5. Desplegar el resultado obtenido por el metodo FO
 '''
 
-import random as rnd
+#import random as rnd
 
 def fo(vector, itemToCount):
     return vector.count(itemToCount)
