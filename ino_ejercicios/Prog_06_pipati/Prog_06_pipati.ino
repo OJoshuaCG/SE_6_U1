@@ -38,7 +38,7 @@ void loop() {
             edo++;
         break;
     }
-    delay(200);
+    delay(50);
 }
 
 void play(){
@@ -95,4 +95,3 @@ void checkInput(){
     }
     end:;    
 }
-

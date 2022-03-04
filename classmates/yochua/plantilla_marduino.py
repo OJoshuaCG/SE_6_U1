@@ -30,7 +30,7 @@ class MyApp(QtWidgets.QMainWindow, Ui_MainWindow):
         # Inicializamos el arduino
         # Conexion a un puerto en LINUX
         # Enviar el COM que se ocupa en el dispositivo
-        self.arduino.connect("/dev/ttyS0")
+        self.arduino.connect("/dev/ttyACM0")
 
     def closeEvent(self, event):
         self.arduino.disconnect()
