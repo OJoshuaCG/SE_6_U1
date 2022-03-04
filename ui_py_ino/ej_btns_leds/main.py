@@ -2,7 +2,7 @@ import sys
 # Modulo/clase arduino
 import arduino as ard 
 import time
-from PyQt5 import uic, QtWidgets
+from PyQt5 import uic, QtWidgets, QtCore
 from pynput.keyboard import Key, Controller
 
 qtCreatorFile = "line_edit.ui" # Nombre del archivo .ui aqui.
@@ -21,24 +21,49 @@ class MyApp(QtWidgets.QMainWindow, Ui_MainWindow):
 	 
         #Instanciamos un objeto de la clase marduino
         self.arduino = ard.c_arduino()
+
+        self.timer = QtCore.QTimer()
+        self.timer.timeout.connect(self.execTimer)
+        self.teclado = Controller()
         
 
    
     def conectar(self):
-        com = self.txt_com.text()
-        print(com)
+        com = "COM"+self.txt_com.text()
+        #print(com)
         # Inicializamos el arduino
         # Conexion a un puerto en LINUX /dev/tty
         # Enviar el COM que se ocupa en el dispositivo
-        self.arduino.connect(com)
+        self.arduino.connect(com,self.btn_conectar)
         self.txt_com.setText("")
         if(self.arduino.verifyConnection()):
             # Si esta conectado...            
             self.le_texto.setEnabled(True)
             self.le_texto.setFocus()            
-            self.readButton()
+            self.beginRead()
+
+    def beginRead(self):
+        if self.arduino == None:
+            # Inicializar Conexion con Arduino
+            self.conectar()
+            print("Arduino Conectado")
+
+        if not self.timer.isActive():
+            self.timer.start(10)
+        else:
+            self.timer.stop()
+
+    # Timer para el Python
+    def execTimer(self):
+        if self.arduino.inWaiting():
+            lectura = self.arduino.read()
+            lectura = lectura.replace("\n", "")
+            lectura = lectura.replace("\r", "")
+            self.keystrokes(lectura)
+            #print(lectura)
 
             
+
     def readButton(self):
         #val = val.replace("\n", "")
         teclado = Controller()
@@ -50,10 +75,30 @@ class MyApp(QtWidgets.QMainWindow, Ui_MainWindow):
         # while True:
         #     dataReaded = self.arduino.read()
         #     time.sleep(1)
+
+    def keystrokes(self,data = "00000"):
+        if data == "00001":
+            self.teclado.press('A')
+            self.teclado.release('A')
+        elif data == "00010":
+            self.teclado.press('B')
+            self.teclado.release('B')
+        elif data == "00100":
+            self.teclado.press('C')
+            self.teclado.release('C')
+        elif data == "01000":
+            self.teclado.press('D')
+            self.teclado.release('D')
+        elif data == "10000":
+            self.teclado.press('E')
+            self.teclado.release('E')
+        
         
 
     def closeEvent(self, event):
         self.arduino.disconnect()
+        if self.timer.isActive():
+            self.timer.stop()
 
 
 if __name__ == "__main__":

@@ -7,7 +7,7 @@ void setup() {
         pinMode(leds[i], OUTPUT);
     }
     Serial.begin(9600);
-    Serial.setTimeout(10);
+    Serial.setTimeout(200);
 }
 
 int edosBtns [5]= {0, 0, 0, 0, 0};
@@ -17,12 +17,12 @@ void loop() {
     
     for(int i = 0; i < 5; i++){
         edosBtns[i] = digitalRead(botones[i]);
-        cadena += String(edosBtns[i]);
+        cadena += String(!edosBtns[i]);
         //digitalWrite(leds[i], !edosBtns[i]);
     }
     
     cadena += "\n";    
     Serial.println(cadena);
 
-    delay(250);
+    delay(200);
 }

@@ -12,19 +12,15 @@ void setup() {
 }
 
 float x1,x2,y1,y2,dist,v;
-String value;
+float value;
 
 void loop() {
   // put your main code here, to run repeatedly:
   if(Serial.available()>0){
-    value = Serial.readString();
-    checkInput();
-  }
-}
-
-void checkInput(){
-    if(!value.equals(" ")){
-        v = value.toInt();
-        Serial.println(v);
+    value = Serial.readString().toFloat();
+    switch(estado){
+      case setX1: x1 = value; estado = setX2; break;
+      
     }
+  }
 }
