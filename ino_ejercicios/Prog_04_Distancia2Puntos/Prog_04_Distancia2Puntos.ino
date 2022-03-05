@@ -13,6 +13,7 @@ int estado = getX1;
 void setup() {
   // put your setup code here, to run once:
   Serial.begin(9600);
+  Serial.setTimeout(100);
 }
 
 float x1,x2,y1,y2,dist;
