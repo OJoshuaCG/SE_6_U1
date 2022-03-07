@@ -1,5 +1,0 @@
-2. Volumen de un cuadrilátero dadas las medidas de cada uno de sus lados
-
-6. Juego de Piedra, Papel, Tijera
-
-10. Multiplicacion de matrices de 2x2

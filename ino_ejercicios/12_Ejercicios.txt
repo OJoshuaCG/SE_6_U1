@@ -1,0 +1,12 @@
+1. Area de un poligono regular de N lados
+CALIFICADO - 2. Volumen de un cuadrilátero dadas las medidas de cada uno de sus lados
+3. Potencia Y de un numero X
+4. Distancia entre dos puntos, dadas las coordenadas de los puntos
+CALIFICADO - 5. Area de un triangulo
+CALIFICADO - 6. Juego de Piedra, Papel, Tijera
+CALIFICADO - 7. Leer N numeros e indicar cuantos de ellos son pares
+8. Leer numeros hasta que uno de ellos sea negativo e imprimir cuantos fueron ingresados, sin contar el negativo
+9. Llevar a cabo la ejecucion de dos sucesiones diferentes (predefinidas y mostrar su evolucion), Ejemplo (loop1 = 2, 3; loop 2 = 4, 6; loop 3 = 6, 9; ….
+10. Multiplicacion de matrices de 2x2
+11. Simulacion de un vumetro con LEDs
+12. Aplicar el examen de una tabla de multiplicar indicada por el usuario
