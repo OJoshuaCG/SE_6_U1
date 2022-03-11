@@ -20,7 +20,7 @@ for i in range(tot_individuos):
 padres = []
 tot_padres = 50
 
-for i in tot_padres:    
+for i in range(tot_padres):    
     indexPadre1 = rnd.randint(0, tot_individuos-1) # Aleatorio entre 0 y n-1
     indexPadre2 = rnd.randint(0, tot_individuos-1) # Aleatorio entre 0 y n-1
 

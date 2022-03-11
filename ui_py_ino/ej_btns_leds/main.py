@@ -5,7 +5,7 @@ import time
 from PyQt5 import uic, QtWidgets, QtCore
 from pynput.keyboard import Key, Controller
 
-qtCreatorFile = "line_edit.ui" # Nombre del archivo .ui aqui.
+qtCreatorFile = "ej_btns_leds/line_edit.ui" # Nombre del archivo .ui aqui O ruta.
 
 Ui_MainWindow, QtBaseClass = uic.loadUiType(qtCreatorFile)
 
@@ -19,7 +19,7 @@ class MyApp(QtWidgets.QMainWindow, Ui_MainWindow):
         self.btn_conectar.clicked.connect(self.conectar)
         #self.btn_accion.clicked.connect(self.accion)
 	 
-        #Instanciamos un objeto de la clase marduino
+        #Instanciamos un objeto de la clase aarduino
         self.arduino = ard.c_arduino()
 
         self.timer = QtCore.QTimer()

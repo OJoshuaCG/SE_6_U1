@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>361</width>
-    <height>155</height>
+    <width>476</width>
+    <height>495</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,9 +17,9 @@
    <widget class="QPushButton" name="btn_conectar">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>10</y>
-      <width>101</width>
+      <x>300</x>
+      <y>20</y>
+      <width>161</width>
       <height>31</height>
      </rect>
     </property>
@@ -31,31 +31,16 @@
     <property name="text">
      <string>Conectar</string>
     </property>
-   </widget>
-   <widget class="QPushButton" name="btn_accion">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>60</y>
-      <width>101</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>16</pointsize>
-     </font>
-    </property>
-    <property name="text">
-     <string>Prender</string>
+    <property name="shortcut">
+     <string>Return, Enter</string>
     </property>
    </widget>
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>140</x>
-      <y>10</y>
-      <width>61</width>
+      <x>10</x>
+      <y>20</y>
+      <width>111</width>
       <height>21</height>
      </rect>
     </property>
@@ -65,15 +50,48 @@
      </font>
     </property>
     <property name="text">
-     <string>COM:</string>
+     <string>Puerto:</string>
     </property>
    </widget>
    <widget class="QLineEdit" name="txt_com">
     <property name="geometry">
      <rect>
-      <x>200</x>
-      <y>10</y>
-      <width>113</width>
+      <x>130</x>
+      <y>20</y>
+      <width>131</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>14</pointsize>
+     </font>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="txt_arduino">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>130</y>
+      <width>311</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>90</y>
+      <width>261</width>
       <height>31</height>
      </rect>
     </property>
@@ -82,6 +100,63 @@
       <pointsize>16</pointsize>
      </font>
     </property>
+    <property name="text">
+     <string>Texto de arduino</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_agregar">
+    <property name="geometry">
+     <rect>
+      <x>340</x>
+      <y>130</y>
+      <width>121</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>16</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Agregar</string>
+    </property>
+    <property name="shortcut">
+     <string>Return, Enter</string>
+    </property>
+   </widget>
+   <widget class="QListWidget" name="list_datos">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>240</y>
+      <width>321</width>
+      <height>211</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_3">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>200</y>
+      <width>261</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>16</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Datos agregados</string>
+    </property>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
@@ -89,7 +164,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>361</width>
+     <width>476</width>
      <height>21</height>
     </rect>
    </property>

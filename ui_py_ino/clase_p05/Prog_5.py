@@ -2,7 +2,7 @@ import sys
 import serial as connector
 from PyQt5 import uic, QtWidgets
 
-qtCreatorFile = "Prog_5.ui" # Nombre del archivo aquí.
+qtCreatorFile = "clase_p05/Prog_5.ui" # Nombre del archivo aquí.
 
 Ui_MainWindow, QtBaseClass = uic.loadUiType(qtCreatorFile)
 

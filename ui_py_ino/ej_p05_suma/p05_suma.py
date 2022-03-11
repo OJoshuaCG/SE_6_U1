@@ -3,7 +3,8 @@ import sys
 import marduino as mard 
 from PyQt5 import uic, QtWidgets
 
-qtCreatorFile = "ui_py_ino/ej_p05_suma/ui_suma.ui" # Nombre del archivo .ui aqui.
+#qtCreatorFile = "ui_py_ino/ej_p05_suma/ui_suma.ui" # Nombre del archivo .ui aqui.
+qtCreatorFile = "ej_p05_suma/ui_suma.ui"
 
 Ui_MainWindow, QtBaseClass = uic.loadUiType(qtCreatorFile)
 
