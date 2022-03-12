@@ -5,7 +5,7 @@ import time
 from PyQt5 import uic, QtWidgets, QtCore
 from pynput.keyboard import Key, Controller
 
-qtCreatorFile = "ej_btns_leds/line_edit.ui" # Nombre del archivo .ui aqui.
+qtCreatorFile = "key_strokes_list_widget/list_widget.ui" # Nombre del archivo .ui aqui.
 
 Ui_MainWindow, QtBaseClass = uic.loadUiType(qtCreatorFile)
 
@@ -63,19 +63,6 @@ class MyApp(QtWidgets.QMainWindow, Ui_MainWindow):
             self.keystrokes(lectura)
             #print(lectura)
 
-            
-
-    def readButton(self):
-        #val = val.replace("\n", "")
-        teclado = Controller()
-        for i in range(5):
-            teclado.press('A')
-            teclado.release('A')
-
-
-        # while True:
-        #     dataReaded = self.arduino.read()
-        #     time.sleep(1)
 
     def keystrokes(self,data = "00000"):
         if data == "00001":

@@ -5,7 +5,7 @@ import time
 from PyQt5 import uic, QtWidgets, QtCore
 from pynput.keyboard import Key, Controller
 
-qtCreatorFile = "ej_btns_leds/line_edit.ui" # Nombre del archivo .ui aqui O ruta.
+qtCreatorFile = "key_strokes_line_edit/line_edit.ui" # Nombre del archivo .ui aqui O ruta.
 
 Ui_MainWindow, QtBaseClass = uic.loadUiType(qtCreatorFile)
 
@@ -63,13 +63,12 @@ class MyApp(QtWidgets.QMainWindow, Ui_MainWindow):
             #print(lectura)
 
             
-
-    def readButton(self):
-        #val = val.replace("\n", "")
-        teclado = Controller()
-        for i in range(5):
-            teclado.press('A')
-            teclado.release('A')
+    # def readButton(self):
+    #     #val = val.replace("\n", "")
+    #     teclado = Controller()
+    #     for i in range(5):
+    #         teclado.press('A')
+    #         teclado.release('A')
 
 
         # while True:

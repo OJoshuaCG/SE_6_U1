@@ -49,6 +49,7 @@ class MyApp(QtWidgets.QMainWindow, Ui_MainWindow):
         else:
             print("Aun no se ha realizado la conexion con arduino")
 
+
     def closeEvent(self, event):
         self.arduino.disconnect()
 
