@@ -43,13 +43,14 @@ class MyApp(QtWidgets.QMainWindow, Ui_MainWindow):
         # Inicializamos el arduino
         # Conexion a un puerto en LINUX /dev/tty
         # Enviar el COM que se ocupa en el dispositivo
-        self.arduino.connect(com,self.btn_conectar)
+        mensaje = self.arduino.connect(com,self.btn_conectar)
         self.txt_com.setText("")
+        self.label_2.setText(mensaje)
         
         
         if(self.arduino.verifyConnection()):
             # Si esta conectado...            
-            self.le_texto.setEnabled(True)
+            
             #self.le_texto.setFocus()    
             
             self.beginRead()

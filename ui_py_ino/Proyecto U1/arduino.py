@@ -12,13 +12,14 @@ class c_arduino():
     def __init__(self):
         self.arduino = None
 
-    def connect(self, port="COM3",btn = QtWidgets.QPushButton):        
+    def connect(self, port="COM3",btn = QtWidgets.QPushButton): 
+        mensaje = ""       
         if self.arduino == None:
             #com = "COM" + self.txt_com.text()
             #self.txt_com.setEnabled(False)
             try:
                 self.arduino = serial.Serial(port, baudrate=9600, timeout=200)
-                print("Conexion Inicializada")
+                mensaje = "Conexion Inicializada"
                 btn.setText("Desconectar")
 
             except serial.SerialException:                                            
@@ -34,11 +35,13 @@ class c_arduino():
         elif self.arduino.isOpen():
             btn.setText("Reconectar")
             self.arduino.close()
-            print("Conexion Cerrada")
+            mensaje = "Conexion Cerrada"
         else:
             btn.setText("Desconectar")
             self.arduino.open()
-            print("Conexion Reconectada")
+            mensaje = "Conexion Reconectada"
+
+        return mensaje
 
 
     def write(self, data):
